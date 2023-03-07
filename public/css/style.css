@@ -12,7 +12,7 @@
 }
 
 :root {
-  --main-color: #033a80;
+  --main-color: #5E3BEE;
   --bg-color: #fff;
   --text-color: #0f0c27;
   --hover: hsl(260, 100%, 51%);
@@ -101,6 +101,9 @@ header.shadow {
   align-items: center;
   gap: 1rem;
 }
+.home {
+  background-color: #F5FCFF;
+}
 .home-img {
   order: 3;
 }
@@ -112,7 +115,10 @@ header.shadow {
   font-weight: 500;
 }
 .home-text h1 {
-  font-size: var(--big-font);
+  color: #5E3BEE;
+}
+.home-text h1 {
+  font-size: 2.5rem;
 }
 .home-text h2 {
   font-size: 1.1rem;
@@ -146,7 +152,16 @@ header.shadow {
   background: var(--hover);
 }
  
+.image-container {
+  float: left;
+  width: 200px;
+  margin-right: 20px;
+}
 
+.image-container img {
+  width: 100%;
+  height: auto;
+}
 .about-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -162,6 +177,7 @@ header.shadow {
   font-size: var(--p-font);
   font-weight: 400;
   text-align: justify;
+  margin-bottom: 20px;
 }
 .information {
   margin: 1rem 0 1.4rem;
@@ -178,17 +194,54 @@ header.shadow {
   font-weight: 400;
   margin-left: 1rem;
 }
+.skills {
+  background-color: #F5FCFF;
+  padding: 4rem 4;
+}
+
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 2fr);
   align-items: center;
-  gap: 2rem;
-  margin-top: 4rem;
+  justify-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
-.skills-img img {
-  width: 80%;
-  padding-left: 4rem;
-  object-position: center;
+
+.skill-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.skill-box:hover {
+  transform: translateY(-10px);
+}
+
+.skill-box img {
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  margin-bottom: 0rem;
+  margin-right: 0.5rem;
+}
+
+.skill-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0rem;
+}
+
+.skill-box p {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
+  color: #555;
 }
 .bars-box {
   position: relative;
@@ -250,16 +303,32 @@ span {
   border-bottom: 2px solid var(--main-color);
   box-shadow: 0 2px 7px rgb(14 55 54 / 15%);
 }
-.services-box:hover{
- background-color: #02225a;
+.services-box {
+  background-color: #F5FCFF;
 }
-
+.services-box:hover{
+ background-color: #5E3BEE;
+}
+.services-box .services-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  padding: 10px;
+}
 .services-box h3 {
   font-size: 1rem;
   font-weight: 600;
   margin: 0.7rem 0 0.4rem;
 }
+.services-box p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0.7rem 0 0.4rem;
+}
 .services-box:hover h3{
+  color: #fff;
+}
+.services-box:hover p{
   color: #fff;
 }
 .services-box .bx {
@@ -268,7 +337,7 @@ span {
   color: var(--main-color);
 }
 .services-box:hover .bx{
-  color: #22cf91;
+  color: #fff;
 }
 .services-box a {
   color: var(--main-color);
@@ -283,6 +352,9 @@ span {
   grid-template-columns: repeat(auto-fit, minmax(280px, auto));
   gap: 1rem;
   margin-top: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 .portfolio-img {
   overflow: hidden;
@@ -296,12 +368,31 @@ span {
   transform: scale(1.1);
   transition: 1s;
 }
+.portfolio-text {
+  background-color: #fff;
+  padding: 1rem;
+  margin-top: 0rem; /* Adjust this value to align the text content with the image */
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0.1, 0.1, 0.1, 0.1);
+}
+.contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F5FCFF;
+  padding: 5rem 0;
+}
 .contact-form {
+  background-color: #F5FCFF;
   display: grid;
   place-items: center;
   margin-top: 2rem;
 }
 .contact-form form {
+  background-color: #F5FCFF;
   display: flex;
   flex-direction: column;
   width: 650px;
@@ -328,7 +419,7 @@ form textarea {
 .contact-button {
   width: 160px;
   cursor: pointer;
-  background: #2768d9;
+  background: #5E3BEE;
   color: #fff;
   justify-content: center;
   text-transform: uppercase;
@@ -339,11 +430,13 @@ form textarea {
   background: var(--hover);
 }
 .footer {
+  width: 100%;
   display: grid;
   place-items: center;
   padding: 20px;
   background: #ebebeb;
   color: #000;
+  margin-bottom: 0%;
 }
 .footer h2 {
   font-size: 1.5rem;
@@ -416,6 +509,7 @@ form textarea {
     display: none;
   }
   .home {
+    background-color: #F5FCFF !important;
     grid-template-columns: 0.5fr 3fr;
   }
   .home-text {
@@ -444,7 +538,7 @@ form textarea {
     justify-content: center;
   }
   .contact-form form{
-    width: 300px;
+    width: 300px;    
   }
   .contact-button{
     margin-left: 25%;
